@@ -1,0 +1,90 @@
+<!-- ============================================================
+  CANONICAL INQUIRY FORM MARKUP — copy into each variant.
+  Restyle freely (classes/layout/wrappers), but DO NOT change:
+  field name attributes, required flags, input types, the
+  data-inquiry / data-inquiry-form / data-field / data-form-status /
+  data-form-success hooks, or the botcheck honeypot.
+  The shared assets/js/inquiry.js engine depends on them.
+  ============================================================ -->
+<div data-inquiry>
+  <form data-inquiry-form novalidate>
+    <div data-field>
+      <label for="inq-name">Name</label>
+      <input id="inq-name" name="name" type="text" required autocomplete="name">
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-email">Email</label>
+      <input id="inq-email" name="email" type="email" required autocomplete="email" inputmode="email">
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-date">Event date</label>
+      <input id="inq-date" name="date" type="date" required>
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-type">Event type</label>
+      <select id="inq-type" name="type" required>
+        <option value="" selected disabled>Choose one</option>
+        <option>Wedding</option>
+        <option>Corporate event</option>
+        <option>Private party</option>
+        <option>Open house</option>
+        <option>Something else</option>
+      </select>
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-guests">Guest count <span class="opt">(optional)</span></label>
+      <select id="inq-guests" name="guests">
+        <option value="" selected>Not sure yet</option>
+        <option>Up to 50</option>
+        <option>50–100</option>
+        <option>100–150</option>
+        <option>150–300</option>
+        <option>300+</option>
+      </select>
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-location">City or venue <span class="opt">(optional)</span></label>
+      <input id="inq-location" name="location" type="text" autocomplete="address-level2">
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-phone">Phone <span class="opt">(optional — for faster confirmation)</span></label>
+      <input id="inq-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-message">Anything else? <span class="opt">(optional)</span></label>
+      <textarea id="inq-message" name="message" rows="4"
+        placeholder="Venue, vibe, special requests — anything that helps us picture your day."></textarea>
+      <p class="field-error" hidden></p>
+    </div>
+
+    <!-- honeypot — keep hidden -->
+    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+    <p data-form-status hidden role="alert"></p>
+
+    <button type="submit">Check My Date</button>
+
+    <p class="form-trust">We personally reply to every inquiry within 24 hours.</p>
+    <p class="form-privacy">Your details are only used to plan your event — never shared.</p>
+  </form>
+
+  <div data-form-success hidden>
+    <h3>You're family now.</h3>
+    <p>Thank you — your inquiry is on its way to Kristen &amp; Adhir. We'll be in touch within
+      24 hours, usually much sooner, with a custom proposal for your day.</p>
+  </div>
+</div>
