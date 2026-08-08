@@ -1,0 +1,70 @@
+# Kin Coffee — kincoffeela.com
+
+Marketing site for Kin Coffee, a luxury coffee cart rental for weddings, corporate events, open
+houses, and private parties in Los Angeles & surrounding areas. Static HTML/CSS/JS — no framework,
+no build step, hostable anywhere.
+
+## Layout
+
+```
+index.html            ← comparison page: pick between the three design variants
+v1-editorial/         ← "Editorial Ivory" (magazine-spread direction)
+v2-collage/           ← "Coastal Collage" (photographic, layered direction)
+v3-atelier/           ← "Quiet Atelier" (minimal, type-first direction)
+assets/
+  css/tokens.css      ← shared design tokens + motion/grain primitives
+  js/inquiry.js       ← shared form engine, reveal-on-scroll, nav behavior
+  img/                ← web-optimized brand imagery
+  form-snippet.html   ← canonical inquiry-form markup (source of truth)
+brand/                ← brand board + logo reference (not served)
+DESIGN_BRIEF.md       ← full research-backed design & conversion spec
+```
+
+## Preview locally
+
+```bash
+cd kincoffeela
+python3 -m http.server 8080
+# open http://localhost:8080
+```
+
+## Activating the contact form (5 minutes, at hosting time)
+
+The inquiry form posts to Web3Forms (free tier is plenty for a new business). Until activated it
+falls back to opening a pre-filled email draft, so no inquiry is ever lost — but activate before
+launch:
+
+1. Make sure `kristen@kincoffeela.com` and `adhir@kincoffeela.com` exist (email hosting/aliases).
+2. Get a free access key at https://web3forms.com using `kristen@kincoffeela.com` (submissions are
+   delivered to the key's email; Adhir is cc'd via the `ccemail` field already configured).
+3. Paste the key into `KIN_FORM.accessKey` at the top of `assets/js/inquiry.js`.
+4. Test-submit on the live site; both inboxes should receive the inquiry.
+
+Alternative relays (if Web3Forms is ever unavailable): Formspree, Basin, or a serverless function +
+Resend — only `inquiry.js` needs to change; the markup is relay-agnostic.
+
+## Launch checklist (when hosting/DNS happens)
+
+- [ ] Pick winning variant → move its two files to site root (update `../assets/` → `assets/`),
+      keep the other variants in an `/archive` folder or delete.
+- [ ] Activate the form (above) + do a live test submission.
+- [ ] Point DNS for `kincoffeela.com` / `www` at the host (Vercel, Netlify, or Cloudflare Pages —
+      all free-tier fine for a static site).
+- [ ] Self-host the two Google Fonts (download woff2, swap the `<link>` for `@font-face`) for
+      speed + resilience.
+- [ ] Add analytics (GA4 or Plausible) + wire the form success state as the conversion event.
+- [ ] Remove `noindex` meta from the chosen page if present anywhere; submit sitemap in Search
+      Console; create a Google Business Profile (huge for "coffee cart rental los angeles").
+- [ ] Replace AI brand renders with real photos of the actual cart as events get booked;
+      add real client reviews into the commented `SLOT` sections (never fabricate).
+
+## Content notes for Kristen & Adhir
+
+- Founder-story copy is intentionally generic in spots — search the variant HTML for `EDIT-ME`
+  comments and personalize.
+- Packages (The Gathering / The Celebration / The Heirloom) show no prices by design; the
+  research-backed offsets are the 24-hour reply promise and detailed inclusions. Honor the 24-hour
+  promise operationally — responsiveness outranks pricing as the #1 booking factor in the wedding
+  industry.
+- Signature drink names (The Kin Latte, Golden Hour, Marine Layer Matcha) are suggestions — rename
+  freely in the Menu section.
