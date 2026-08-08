@@ -10,7 +10,9 @@
   --taupe: #A48F7A;
   --taupe-dark: #837261;
   --taupe-warm: #8C7B6E;
+  --taupe-deep: #6E5F51;       /* button fill — AA-safe with ivory text */
   --ink: #3D332C;              /* body text anchor — WCAG-safe on ivory/beige */
+  --ink-soft: #63574C;         /* small labels/captions — AA-safe on ivory & beige */
   --hairline: rgba(131, 114, 97, 0.35);
 
   --font-sans: 'Montserrat', 'Avenir Next', -apple-system, 'Helvetica Neue', Arial, sans-serif;
@@ -39,7 +41,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 button { font: inherit; cursor: pointer; }
 
@@ -92,5 +94,5 @@ button { font: inherit; cursor: pointer; }
   font-size: 11px; font-weight: 500;
   letter-spacing: var(--track-label);
   text-transform: uppercase;
-  color: var(--taupe-dark);
+  color: var(--ink-soft); /* small text — taupe-dark fails AA below 24px */
 }
