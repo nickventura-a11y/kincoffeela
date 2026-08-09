@@ -783,3 +783,23 @@ form[data-inquiry-form] button[type="submit"] {
   .pkg-desc { font-size: 26px; }
   .btn--nav { padding: 12px 16px; font-size: 11px; letter-spacing: 0.14em; }
 }
+
+/* ============================================================
+   MOBILE STICKY CTA BAR — thumb-reach conversion path
+   ============================================================ */
+.kin-mobile-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(246, 242, 236, 0.93);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--hairline);
+  transform: translateY(110%);
+  transition: transform 0.35s var(--ease-out);
+}
+.kin-mobile-bar.is-shown { transform: none; }
+.kin-mobile-bar .btn { display: flex; width: 100%; }
+@media (min-width: 700px) { .kin-mobile-bar { display: none; } }
+@media (prefers-reduced-motion: reduce) { .kin-mobile-bar { transition: none; } }

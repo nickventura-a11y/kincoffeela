@@ -228,11 +228,33 @@ const KIN_FORM = {
     });
   }
 
+  /* ---------- mobile sticky CTA bar ---------- */
+  function initMobileCta() {
+    var bar = document.querySelector("[data-mobile-cta]");
+    if (!bar) return;
+    var form = document.querySelector("[data-inquiry]");
+    var pastHero = window.scrollY > 480, nearForm = false;
+    var update = function () {
+      bar.classList.toggle("is-shown", pastHero && !nearForm);
+    };
+    window.addEventListener("scroll", function () {
+      pastHero = window.scrollY > 480;
+      update();
+    }, { passive: true });
+    if (form && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        nearForm = entries[0].isIntersecting;
+        update();
+      }, { threshold: 0.05 }).observe(form);
+    }
+    update();
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
-      initReveal(); initNav(); initAccordion(); initForm();
+      initReveal(); initNav(); initAccordion(); initForm(); initMobileCta();
     });
   } else {
-    initReveal(); initNav(); initAccordion(); initForm();
+    initReveal(); initNav(); initAccordion(); initForm(); initMobileCta();
   }
 })();
