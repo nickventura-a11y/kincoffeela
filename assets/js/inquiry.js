@@ -78,6 +78,8 @@ const KIN_FORM = {
     name: "Please tell us your name.",
     email: "Please enter a valid email so we can reply.",
     date: "Please pick your event date — a best guess is fine.",
+    time: "Please add your event time — a rough window is fine.",
+    guests: "Please choose your party size — a best guess is fine.",
     type: "Please choose the kind of event.",
   };
 
@@ -114,8 +116,8 @@ const KIN_FORM = {
 
   function prettyLines(data) {
     var labels = {
-      name: "Name", email: "Email", phone: "Phone", date: "Event date",
-      type: "Event type", guests: "Guest count", location: "Location", message: "Details",
+      name: "Name", email: "Email", phone: "Phone", date: "Event date", time: "Event time",
+      guests: "Party size", type: "Event type", location: "Location", message: "Details",
     };
     return Object.keys(labels)
       .filter(function (k) { return data[k]; })
@@ -144,7 +146,7 @@ const KIN_FORM = {
   }
 
   function mailtoFallback(form, data) {
-    var body = "Hi Kin Coffee — I'd love to check your availability.\n\n" + prettyLines(data) + "\n";
+    var body = "Hi Kin Coffee — I'd like to inquire about booking the cart.\n\n" + prettyLines(data) + "\n";
     var href = "mailto:" + KIN_FORM.toEmail +
       "?cc=" + KIN_FORM.ccEmail +
       "&subject=" + encodeURIComponent(KIN_FORM.subject) +

@@ -8,7 +8,8 @@ no build step, hostable anywhere.
 
 ```
 index.html            ← comparison page: pick between the three design variants
-v1-editorial/         ← "Editorial Ivory" (magazine-spread direction)
+v1-editorial/         ← "Editorial Ivory" — the chosen design: index (home), about, faq
+mobile/               ← forced-phone preview of v1 (same HTML, desktop breakpoints stripped)
 v2-collage/           ← "Coastal Collage" (photographic, layered direction)
 v3-atelier/           ← "Quiet Atelier" (minimal, type-first direction)
 assets/
@@ -62,9 +63,8 @@ Resend — only `inquiry.js` needs to change; the markup is relay-agnostic.
 
 - Founder-story copy is intentionally generic in spots — search the variant HTML for `EDIT-ME`
   comments and personalize.
-- Packages (The Gathering / The Celebration / The Heirloom) show no prices by design; the
-  research-backed offsets are the 24-hour reply promise and detailed inclusions. Honor the 24-hour
-  promise operationally — responsiveness outranks pricing as the #1 booking factor in the wedding
-  industry.
+- Packages were removed (Oct 2026, Kristen's edits) — every event is quoted from the inquiry form,
+  which now requires date, event time, and party size. Honor the 24-hour reply promise
+  operationally — responsiveness outranks pricing as the #1 booking factor in the wedding industry.
 - Signature drink names (The Kin Latte, Golden Hour, Marine Layer Matcha) are suggestions — rename
   freely in the Menu section.

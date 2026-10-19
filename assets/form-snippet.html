@@ -27,6 +27,25 @@
     </div>
 
     <div data-field>
+      <label for="inq-time">Event time</label>
+      <input id="inq-time" name="time" type="text" required placeholder="e.g. 2–6pm">
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
+      <label for="inq-guests">Party size</label>
+      <select id="inq-guests" name="guests" required>
+        <option value="" selected disabled>Choose one</option>
+        <option>Up to 50</option>
+        <option>50–100</option>
+        <option>100–150</option>
+        <option>150–300</option>
+        <option>300+</option>
+      </select>
+      <p class="field-error" hidden></p>
+    </div>
+
+    <div data-field>
       <label for="inq-type">Event type</label>
       <select id="inq-type" name="type" required>
         <option value="" selected disabled>Choose one</option>
@@ -35,19 +54,6 @@
         <option>Private party</option>
         <option>Open house</option>
         <option>Something else</option>
-      </select>
-      <p class="field-error" hidden></p>
-    </div>
-
-    <div data-field>
-      <label for="inq-guests">Guest count <span class="opt">(optional)</span></label>
-      <select id="inq-guests" name="guests">
-        <option value="" selected>Not sure yet</option>
-        <option>Up to 50</option>
-        <option>50–100</option>
-        <option>100–150</option>
-        <option>150–300</option>
-        <option>300+</option>
       </select>
       <p class="field-error" hidden></p>
     </div>
@@ -76,7 +82,7 @@
 
     <p data-form-status hidden role="alert"></p>
 
-    <button type="submit">Check My Date</button>
+    <button type="submit">Inquire</button>
 
     <p class="form-trust">We personally reply to every inquiry within 24 hours.</p>
     <p class="form-privacy">Your details are only used to plan your event — never shared.</p>
