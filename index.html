@@ -3,109 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Kin Coffee — Choose Your Website</title>
   <script>document.documentElement.className += ' js';</script>
+  <title>Kin Coffee — Luxury Coffee Cart Rentals for Weddings &amp; Events | Los Angeles</title>
+  <meta name="description" content="Kin Coffee is a family-run luxury espresso cart serving weddings, corporate events, open houses, and private parties across Los Angeles. Full-service, licensed and insured — we come to you.">
+  <meta property="og:title" content="Kin Coffee — Luxury Coffee Cart Rentals | Los Angeles">
+  <meta property="og:description" content="A full-service espresso cart for weddings, corporate events, and gatherings across Los Angeles. Bringing your favorite coffee spot to you.">
+  <meta property="og:image" content="https://kincoffeela.com/assets/img/cart-dusk-1400.jpg">
+  <link rel="canonical" href="https://kincoffeela.com/">
+  <meta name="theme-color" content="#F6F2EC">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <style>
-    body { padding: clamp(32px, 6vw, 80px) clamp(20px, 6vw, 80px); }
-    .wordmark { text-align: center; margin-bottom: 8px; }
-    .wordmark .kin {
-      font-family: var(--font-sans); font-weight: 400; font-size: clamp(40px, 6vw, 64px);
-      letter-spacing: 0.32em; margin-right: -0.32em; color: var(--ink);
-    }
-    .wordmark .coffee {
-      display: flex; align-items: center; justify-content: center; gap: 14px;
-      font-family: var(--font-sans); font-weight: 500; font-size: 13px;
-      letter-spacing: 0.42em; margin-right: -0.42em; color: var(--taupe-dark);
-      text-transform: uppercase; margin-top: 4px;
-    }
-    .wordmark .coffee::before, .wordmark .coffee::after {
-      content: ""; width: 34px; height: 1px; background: var(--taupe-dark);
-    }
-    .intro {
-      font-family: var(--font-serif); font-style: italic; font-size: clamp(22px, 3vw, 30px);
-      color: var(--taupe-warm); text-align: center; max-width: 620px;
-      margin: 28px auto 8px; line-height: 1.35;
-    }
-    .note { text-align: center; font-size: 14px; color: var(--taupe-dark); max-width: 560px; margin: 0 auto 64px; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto; }
-    .card { text-decoration: none; border: 1px solid var(--hairline); background: #fff9; display: flex; flex-direction: column; transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out); }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(61,51,44,.35); }
-    .card .thumb { aspect-ratio: 4 / 3; overflow: hidden; background: var(--beige); }
-    .card .thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .thumb-type { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: var(--ivory); }
-    .thumb-type em { font-family: var(--font-serif); font-style: italic; font-size: 26px; color: var(--ink); }
-    .thumb-type span { font-size: 10px; letter-spacing: 0.3em; margin-right: -0.3em; text-transform: uppercase; color: var(--taupe-dark); }
-    .card .body { padding: 26px 28px 30px; }
-    .card h2 { font-family: var(--font-sans); font-weight: 500; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 10px; color: var(--ink); }
-    .card p { margin: 0 0 18px; font-size: 14.5px; line-height: 1.6; color: var(--ink); }
-    .card .go { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe-dark); }
-    .taglines { max-width: 640px; margin: 88px auto 0; text-align: center; }
-    .taglines h2 { font-size: 12px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--taupe-dark); margin-bottom: 22px; }
-    .taglines ul { list-style: none; padding: 0; margin: 0; }
-    .taglines li { font-family: var(--font-serif); font-style: italic; font-size: 21px; color: var(--ink); padding: 12px 0; border-bottom: 1px solid var(--hairline); }
-    .taglines li:first-child { color: var(--taupe-warm); }
-    .taglines li:first-child::after { content: " — current pick"; font-family: var(--font-sans); font-style: normal; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe-dark); }
-    .taglines .caption { font-size: 13px; color: var(--taupe-dark); margin-top: 18px; }
-  </style>
+  <script src="assets/js/inquiry.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kin Coffee",
+    "url": "https://kincoffeela.com",
+    "email": "kristen@kincoffeela.com",
+    "description": "Luxury coffee cart rentals for weddings, corporate events, open houses, and private parties in Los Angeles and surrounding areas.",
+    "areaServed": "Los Angeles"
+  }
+  </script>
 </head>
 <body class="grain">
-  <header class="wordmark">
-    <div class="kin">KIN</div>
-    <div class="coffee">Coffee</div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-head site-head--home" data-nav>
+    <nav class="site-nav" aria-label="Site">
+      <a href="#menu">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <a class="wordmark" href="#top" aria-label="Kin Coffee — back to top">
+      <span class="wordmark-kin">KIN</span>
+      <span class="wordmark-sub">— Coffee —</span>
+    </a>
+    <a class="btn btn--nav head-cta" href="#inquire">Inquire</a>
   </header>
 
-  <p class="intro">Three directions for kincoffeela.com — same brand, same words, three moods. Pick the one that feels like Kin.</p>
-  <p class="note">Every version shares the identical high-converting inquiry form, packages, menu, and FAQ. Only the design language changes — so choose purely on feel.</p>
+  <main id="main">
 
-  <main class="cards">
-    <a class="card" href="v1-editorial/">
-      <div class="thumb"><img src="assets/img/cup-600.jpg" alt="Kin Coffee branded cup — Editorial Ivory preview"></div>
-      <div class="body">
-        <h2>01 · Editorial Ivory</h2>
-        <p>A magazine spread. Oversized italic type on ivory, asymmetric layouts, packages as an elegant menu list. Feels like a slow-living publication.</p>
-        <span class="go">View this version →</span>
+    <!-- ============ HERO — the logo, centered ============ -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <h1 class="hero-logo" aria-label="Kin Coffee">
+          <span class="hero-logo-kin" aria-hidden="true">KIN</span>
+          <span class="hero-logo-sub" aria-hidden="true">Coffee</span>
+        </h1>
+        <p class="hero-tagline">Bringing your favorite coffee spot to&nbsp;you</p>
+        <p class="hero-support">A full-service espresso cart for weddings, corporate events &amp; gatherings &mdash; Los&nbsp;Angeles</p>
+        <a class="btn" href="#inquire">Inquire</a>
       </div>
-    </a>
-
-    <a class="card" href="v2-collage/">
-      <div class="thumb"><img src="assets/img/cart-dusk-800.jpg" alt="Kin Coffee cart at dusk with string lights — Coastal Collage preview"></div>
-      <div class="body">
-        <h2>02 · Coastal Collage</h2>
-        <p>Warm and photographic. The dusk cart fills the screen, images layer and overlap like a styled mood board, texture everywhere. The most romantic of the three.</p>
-        <span class="go">View this version →</span>
+      <div class="hero-media">
+        <img
+          src="assets/img/cart-dusk-1400.jpg"
+          srcset="assets/img/cart-dusk-800.jpg 800w, assets/img/cart-dusk-1400.jpg 1400w"
+          sizes="100vw"
+          width="1402" height="1122"
+          alt="The Kin cart at an evening reception under string lights — candlelit tables, white florals, and a tray of pastries beside it"
+          fetchpriority="high" decoding="async">
       </div>
-    </a>
+    </section>
 
-    <a class="card" href="v3-atelier/">
-      <div class="thumb">
-        <div class="thumb-type">
-          <em>When we're here, you're family.</em>
-          <span>Quiet Atelier</span>
+    <!-- ============ INTRO / WHAT WE DO ============ -->
+    <section class="section section--beige intro">
+      <div class="section-inner grid12" data-reveal-stagger>
+        <p class="gutter-label gutter-label--vert eyebrow" aria-hidden="true">What we do</p>
+        <div class="intro-text" data-reveal>
+          <h2>The caf&eacute; that comes to&nbsp;you</h2>
+          <p>Kin Coffee is a family-run espresso cart serving weddings, corporate events, open houses, and private parties across Los Angeles and its surrounding areas. We arrive with everything &mdash; the cart, the barista, the beans &mdash; and set up wherever your day is happening: a Malibu bluff at golden hour, a Pasadena courtyard, a conference floor downtown.</p>
+          <p>Licensed, insured, and fully self-contained, we only need a corner and an outlet. You gather the people. We&rsquo;ll pour.</p>
+          <p>No rentals to coordinate, no extras to chase down. If it belongs at a coffee bar, it arrives with us.</p>
+        </div>
+        <div class="intro-media frame" data-reveal>
+          <img
+            src="assets/img/cart-day-1400.jpg"
+            srcset="assets/img/cart-day-800.jpg 800w, assets/img/cart-day-1400.jpg 1400w"
+            sizes="(min-width: 960px) 44vw, 92vw"
+            width="1402" height="1122"
+            alt="The Kin Coffee cart on a sunlit stone patio among olive trees, with rattan chairs, marble bistro tables, and a linen umbrella"
+            loading="lazy" decoding="async">
         </div>
       </div>
-      <div class="body">
-        <h2>03 · Quiet Atelier</h2>
-        <p>Nearly monochrome restraint — type and whitespace first, photography in measured full-width bands, one dramatic dark moment. The most "expensive-feeling" minimalism.</p>
-        <span class="go">View this version →</span>
+    </section>
+    <!-- SLOT: real reviews/venues once earned -->
+
+    <!-- ============ MENU — the printed table card on its walnut stand ============ -->
+    <section class="section menu" id="menu">
+      <div class="menu-stand" data-reveal>
+        <div class="menu-card">
+          <h2 class="menu-card-logo">
+            <span class="visually-hidden">Menu</span>
+            <span class="menu-card-kin" aria-hidden="true">KIN</span>
+            <span class="menu-card-sub" aria-hidden="true">Coffee</span>
+          </h2>
+
+          <h3 class="menu-subhead">Kin classics</h3>
+          <ul class="menu-list">
+            <li>Espresso</li>
+            <li>Americano</li>
+            <li>Cortado</li>
+            <li>Cappuccino</li>
+            <li>Latte</li>
+          </ul>
+
+          <h3 class="menu-subhead">Kin signatures</h3>
+          <ul class="menu-list menu-list--sig">
+            <li>
+              <span class="sig-name">Sunset</span>
+              <span class="sig-desc">espresso&nbsp;&middot;&nbsp;vanilla&nbsp;&middot;&nbsp;milk</span>
+            </li>
+            <li>
+              <span class="sig-name">Mulholland</span>
+              <span class="sig-desc">espresso&nbsp;&middot;&nbsp;maple syrup&nbsp;&middot;&nbsp;milk</span>
+            </li>
+            <li>
+              <span class="sig-name">Laurel Canyon</span>
+              <span class="sig-desc">espresso&nbsp;&middot;&nbsp;rose syrup&nbsp;&middot;&nbsp;milk</span>
+            </li>
+            <li>
+              <span class="sig-name">Los Feliz</span>
+              <span class="sig-desc">espresso&nbsp;&middot;&nbsp;sweetened condensed milk&nbsp;&middot;&nbsp;milk</span>
+            </li>
+          </ul>
+
+          <h3 class="menu-subhead">Milk options</h3>
+          <p class="menu-milk">Whole&nbsp;&middot;&nbsp;Oat&nbsp;&middot;&nbsp;Almond</p>
+
+          <p class="menu-note">Ask your barista about our off-menu Barista Choice.</p>
+        </div>
+        <div class="menu-stand-base" aria-hidden="true"></div>
       </div>
-    </a>
+    </section>
+
+    <!-- ============ INQUIRE ============ -->
+    <section class="section inquire" id="inquire">
+      <div class="section-inner inquire-grid">
+        <div class="inquire-media" data-reveal>
+          <img
+            src="assets/img/cart-backdrop-1400.jpg"
+            srcset="assets/img/cart-backdrop-800.jpg 800w, assets/img/cart-backdrop-1400.jpg 1400w"
+            sizes="(min-width: 960px) 38vw, 92vw"
+            width="1402" height="1122"
+            alt="The Kin cart in front of its indoor backdrop wall — lit wooden shelves, trailing plants, and a small COFFEE sign above the marble panel"
+            loading="lazy" decoding="async">
+        </div>
+        <div class="inquire-panel" data-reveal>
+          <header class="section-head">
+            <p class="eyebrow">Tell us about your day</p>
+            <h2>Inquire</h2>
+            <p class="inquire-lede">Share your date, time, and party size. We personally reply to every inquiry within 24 hours &mdash; usually much sooner &mdash; with a custom proposal.</p>
+          </header>
+
+          <div data-inquiry>
+            <form data-inquiry-form novalidate>
+              <div data-field>
+                <label for="inq-name">Name</label>
+                <input id="inq-name" name="name" type="text" required autocomplete="name">
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-email">Email</label>
+                <input id="inq-email" name="email" type="email" required autocomplete="email" inputmode="email">
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-date">Event date</label>
+                <input id="inq-date" name="date" type="date" required>
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-time">Event time</label>
+                <input id="inq-time" name="time" type="text" required placeholder="e.g. 2&ndash;6pm">
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-guests">Party size</label>
+                <select id="inq-guests" name="guests" required>
+                  <option value="" selected disabled>Choose one</option>
+                  <option>Up to 50</option>
+                  <option>50–100</option>
+                  <option>100–150</option>
+                  <option>150–300</option>
+                  <option>300+</option>
+                </select>
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-type">Event type</label>
+                <select id="inq-type" name="type" required>
+                  <option value="" selected disabled>Choose one</option>
+                  <option>Wedding</option>
+                  <option>Corporate event</option>
+                  <option>Private party</option>
+                  <option>Open house</option>
+                  <option>Something else</option>
+                </select>
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-location">City or venue <span class="opt">(optional)</span></label>
+                <input id="inq-location" name="location" type="text" autocomplete="address-level2">
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-phone">Phone <span class="opt">(optional — for faster confirmation)</span></label>
+                <input id="inq-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+                <p class="field-error" hidden></p>
+              </div>
+
+              <div data-field>
+                <label for="inq-message">Anything else? <span class="opt">(optional)</span></label>
+                <textarea id="inq-message" name="message" rows="4"
+                  placeholder="Venue, vibe, special requests — anything that helps us picture your day."></textarea>
+                <p class="field-error" hidden></p>
+              </div>
+
+              <!-- honeypot — keep hidden -->
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+              <p data-form-status hidden role="alert"></p>
+
+              <button type="submit">Inquire</button>
+
+              <p class="form-trust">We personally reply to every inquiry within 24 hours.</p>
+              <p class="form-privacy">Your details are only used to plan your event &mdash; never shared.</p>
+            </form>
+
+            <div data-form-success hidden>
+              <h3>You&rsquo;re family now.</h3>
+              <p>Thank you &mdash; your inquiry is on its way to Kristen &amp; Adhir. We&rsquo;ll be in touch within
+                24 hours, usually much sooner, with a custom proposal for your day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <section class="taglines">
-    <h2>Tagline options</h2>
-    <ul>
-      <li>When we're here, you're family.</li>
-      <li>Gathered around good coffee.</li>
-      <li>Every cup, among family.</li>
-      <li>Pull up a chair — the coffee's on.</li>
-    </ul>
-    <p class="caption">The first is the current pick (Nick's flip of the original). The other three are fully original alternates if you'd rather have zero echo of the Olive Garden line.</p>
-  </section>
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-foot">
+    <div class="section-inner">
+      <p class="foot-tagline">When we&rsquo;re here, you&rsquo;re family.</p>
+      <div class="foot-grid">
+        <div class="foot-col">
+          <h3 class="foot-head">Contact</h3>
+          <p><a href="mailto:kristen@kincoffeela.com">kristen@kincoffeela.com</a></p>
+          <p><a href="mailto:adhir@kincoffeela.com">adhir@kincoffeela.com</a></p>
+          <p><a class="btn btn--nav foot-cta" href="#inquire">Inquire</a></p>
+        </div>
+        <div class="foot-col">
+          <h3 class="foot-head">Explore</h3>
+          <p><a href="#menu">Menu</a></p>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="faq.html">FAQ</a></p>
+        </div>
+        <div class="foot-col">
+          <h3 class="foot-head">Service area</h3>
+          <p>Los Angeles &amp; surrounding areas &mdash; Malibu to Pasadena, the Valley to Orange County.</p>
+          <p>Licensed &amp; insured.</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>&copy; 2026 Kin Coffee &middot; Los Angeles</p>
+        <p>kincoffeela.com</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="kin-mobile-bar" data-mobile-cta>
+    <a class="btn" href="#inquire">Inquire</a>
+  </div>
 </body>
 </html>

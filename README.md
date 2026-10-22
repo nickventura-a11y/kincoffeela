@@ -7,17 +7,19 @@ no build step, hostable anywhere.
 ## Layout
 
 ```
-index.html            ← comparison page: pick between the three design variants
-v1-editorial/         ← "Editorial Ivory" — the chosen design: index (home), about, faq
-mobile/               ← forced-phone preview of v1 (same HTML, desktop breakpoints stripped)
-v2-collage/           ← "Coastal Collage" (photographic, layered direction)
-v3-atelier/           ← "Quiet Atelier" (minimal, type-first direction)
+index.html, about.html,
+faq.html, style.css   ← the live site at kincoffeela.com ("Editorial Ivory", the chosen design)
+CNAME                 ← custom domain for GitHub Pages (kincoffeela.com)
+v1-editorial/         ← redirect stubs so old /v1-editorial/ links land on the root pages
+mobile/               ← forced-phone preview of the site (same HTML, desktop breakpoints stripped), noindex
+v2-collage/           ← "Coastal Collage" (unused direction, noindex)
+v3-atelier/           ← "Quiet Atelier" (unused direction, noindex)
 assets/
   css/tokens.css      ← shared design tokens + motion/grain primitives
   js/inquiry.js       ← shared form engine, reveal-on-scroll, nav behavior
   img/                ← web-optimized brand imagery
   form-snippet.html   ← canonical inquiry-form markup (source of truth)
-brand/                ← brand board + logo reference (not served)
+brand/                ← brand board + logo reference
 DESIGN_BRIEF.md       ← full research-backed design & conversion spec
 ```
 
@@ -46,11 +48,10 @@ Resend — only `inquiry.js` needs to change; the markup is relay-agnostic.
 
 ## Launch checklist (when hosting/DNS happens)
 
-- [ ] Pick winning variant → move its two files to site root (update `../assets/` → `assets/`),
-      keep the other variants in an `/archive` folder or delete.
+- [x] Pick winning variant → moved v1-editorial to the site root (Oct 2026).
 - [ ] Activate the form (above) + do a live test submission.
-- [ ] Point DNS for `kincoffeela.com` / `www` at the host (Vercel, Netlify, or Cloudflare Pages —
-      all free-tier fine for a static site).
+- [x] Hosted on GitHub Pages: GoDaddy DNS has the four GitHub A records on `@` and
+      `www` CNAME → `nickventura-a11y.github.io`; HTTPS enforced in the repo's Pages settings.
 - [ ] Self-host the two Google Fonts (download woff2, swap the `<link>` for `@font-face`) for
       speed + resilience.
 - [ ] Add analytics (GA4 or Plausible) + wire the form success state as the conversion event.
@@ -66,5 +67,4 @@ Resend — only `inquiry.js` needs to change; the markup is relay-agnostic.
 - Packages were removed (Oct 2026, Kristen's edits) — every event is quoted from the inquiry form,
   which now requires date, event time, and party size. Honor the 24-hour reply promise
   operationally — responsiveness outranks pricing as the #1 booking factor in the wedding industry.
-- Signature drink names (The Kin Latte, Golden Hour, Marine Layer Matcha) are suggestions — rename
-  freely in the Menu section.
+- The Menu section mirrors the printed table card; change it only when the card changes.
