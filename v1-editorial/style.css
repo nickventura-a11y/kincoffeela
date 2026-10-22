@@ -1,7 +1,7 @@
 /* ============================================================
    Kin Coffee — V1 Editorial Ivory
    Kinfolk-adjacent magazine spread: centered-logo hero, 12-col
-   asymmetric body grid, framed menu card, gutter labels,
+   asymmetric body grid, menu card on a walnut stand, gutter labels,
    underline form. Builds on ../assets/css/tokens.css.
    ============================================================ */
 
@@ -313,148 +313,110 @@ h2,
 .founders-text p { max-width: 54ch; }
 
 /* ============================================================
-   MENU — a printed menu card in a walnut frame
+   MENU — the printed table card on a walnut stand.
+   The stand is a size container, so the card scales like
+   print (cqi units) in both the desktop and /mobile builds.
    ============================================================ */
-.menu-frame {
-  max-width: 980px;
+.menu-stand {
+  container-type: inline-size;
+  max-width: 620px;
   margin-inline: auto;
-  padding: clamp(10px, 1.4vw, 16px);
-  background: #5B4A3C;   /* walnut, to match the cart's counter */
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 1px 2px rgba(61, 51, 44, 0.18),
-    0 22px 48px -18px rgba(61, 51, 44, 0.45);
 }
 .menu-card {
-  position: relative;
-  padding: clamp(44px, 6vw, 80px) clamp(24px, 6vw, 84px) clamp(36px, 5vw, 60px);
-  background: #FBF8F3;   /* menu-card stock, a shade brighter than the ivory page */
-  text-align: center;
-}
-/* inset printer's rule */
-.menu-card::before {
-  content: "";
-  position: absolute;
-  inset: clamp(10px, 1.4vw, 16px);
-  border: 1px solid var(--hairline);
-  pointer-events: none;
+  margin-inline: 3.5cqi;   /* the base runs a little wider than the card */
+  padding: clamp(40px, 11cqi, 72px) clamp(24px, calc(18cqi - 33px), 80px) clamp(60px, 14cqi, 92px);
+  background: #FBF8F3;     /* menu-card stock, a shade brighter than the ivory page */
+  box-shadow:
+    0 1px 2px rgba(61, 51, 44, 0.12),
+    0 26px 44px -26px rgba(61, 51, 44, 0.4);
 }
 
-.menu-card-brand {
-  font-size: 13px;
-  font-weight: 600;
+.menu-card-logo {
+  margin: 0 0 clamp(36px, 9cqi, 56px);
+  font-family: var(--font-sans);   /* the wordmark, not the italic h2 */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  color: var(--ink);
+}
+.menu-card-kin {
+  display: block;
+  font-size: clamp(56px, 15cqi, 96px);
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;    /* optically re-center the tracking */
+}
+.menu-card-sub {
+  display: block;
+  margin-top: 0.9em;
+  font-size: clamp(12px, 2.6cqi, 16px);
+  font-weight: 500;
   letter-spacing: 0.5em;
   margin-right: -0.5em;
-  color: var(--ink);
-}
-.menu-card-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  margin: 10px 0 0;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(44px, 5vw, 64px);
-  line-height: 1.1;
-  letter-spacing: 0;
-  color: var(--ink);
-}
-.menu-card-title::before,
-.menu-card-title::after {
-  content: "";
-  width: clamp(40px, 6vw, 72px);
-  height: 1px;
-  background: var(--taupe);
-}
-
-.menu-cols {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  margin-top: clamp(40px, 5vw, 60px);
+  text-transform: uppercase;
 }
 
 .menu-subhead {
-  font-size: 12px;
+  margin: clamp(32px, 8cqi, 52px) 0 clamp(14px, 3cqi, 20px);
+  padding-bottom: 0.9em;
+  border-bottom: 1px solid rgba(61, 51, 44, 0.55);
+  font-size: clamp(11px, 2.2cqi, 14px);
   font-weight: 600;
-  letter-spacing: var(--track-label);
-  margin-right: calc(-1 * var(--track-label));
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ink);
-  margin-bottom: 22px;
 }
+.menu-card-logo + .menu-subhead { margin-top: 0; }
+
 .menu-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.menu-list li {
-  padding: 7px 0;
-  font-size: 15px;
+.menu-list li,
+.menu-milk {
+  font-family: var(--font-serif);
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: clamp(22px, 5cqi, 31px);
+  line-height: 1.25;
   color: var(--ink);
 }
-.menu-list--sig li { padding: 10px 0 14px; }
+.menu-milk { margin: 0; }
+.menu-list--sig li + li { margin-top: clamp(12px, 3cqi, 18px); }
 .sig-name { display: block; }
 .sig-desc {
   display: block;
-  margin-top: 2px;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--taupe-warm);
-}
-.menu-seasonal {
-  max-width: 30ch;
-  margin: 18px auto 0;
-  font-size: 13.5px;
-  line-height: 1.8;
-}
-
-.menu-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: var(--taupe);
-  font-size: 14px;
-}
-.menu-divider::before,
-.menu-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--hairline);
-}
-
-.menu-card-foot {
-  margin-top: clamp(40px, 5vw, 56px);
-  padding-top: 26px;
-  border-top: 1px solid var(--hairline);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  line-height: 2;
+  margin-top: 0.1em;
+  font-size: clamp(15px, 3.1cqi, 19px);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
   color: var(--ink-soft);
 }
-.menu-card-foot p + p { margin-top: 0; }
 
-@media (min-width: 760px) {
-  .menu-cols {
-    grid-template-columns: 1fr auto 1fr;
-    gap: clamp(28px, 4vw, 56px);
-    align-items: stretch;
-  }
-  .menu-divider { flex-direction: column; }
-  .menu-divider::before,
-  .menu-divider::after { width: 1px; height: auto; }
+.menu-note {
+  margin: clamp(36px, 8cqi, 52px) 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(16px, 3.1cqi, 19px);
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+  color: var(--ink-soft);
+}
+
+/* the walnut base the card slots into */
+.menu-stand-base {
+  position: relative;
+  z-index: 1;
+  height: clamp(34px, 8cqi, 52px);
+  margin-top: calc(-1 * clamp(20px, 5cqi, 30px));
+  border-radius: 2px;
+  background: linear-gradient(180deg, #7A6352 0, #7A6352 3px, #5E4A3B 3px, #4B3A2E 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 2px 3px rgba(61, 51, 44, 0.3),
+    0 26px 30px -20px rgba(61, 51, 44, 0.55);
 }
 
 /* ============================================================
