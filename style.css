@@ -484,11 +484,13 @@ h2,
 
 .inquire-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 
+/* Full cart photo, never cropped (Kristen 11/5: show the whole cart) */
 .inquire-media img {
+  display: block;
   width: 100%;
+  max-width: 520px;
   height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  margin-inline: auto;
 }
 
 @media (min-width: 960px) {
@@ -497,13 +499,8 @@ h2,
     column-gap: clamp(48px, 6vw, 96px);
     align-items: stretch;
   }
-  .inquire-media { position: relative; }
-  .inquire-media img {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    aspect-ratio: auto;
-  }
+  .inquire-media { align-self: center; }
+  .inquire-media img { max-width: none; }
   .inquire-panel { max-width: 640px; }
 }
 
